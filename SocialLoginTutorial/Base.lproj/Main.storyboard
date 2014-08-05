@@ -1,25 +1,156 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uko-5L-GEl">
+                                <rect key="frame" x="268" y="170" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="SA0-ih-rGX"/>
+                                    <constraint firstAttribute="width" constant="65" id="lm4-E6-5Lv"/>
+                                </constraints>
+                                <state key="normal" image="login-facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Odd-8o-gj5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk7-4z-UyR">
+                                <rect key="frame" x="268" y="385" width="65" height="65"/>
+                                <state key="normal" image="login-twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4ZU-tZ-5iC"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vtA-Mw-nOA">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0te-pf-oAz">
+                                <rect key="frame" x="239" y="91" width="119" height="29"/>
+                                <segments>
+                                    <segment title="Bug"/>
+                                    <segment title="Correct"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="vtA-Mw-nOA" secondAttribute="centerY" id="Dog-py-ANt"/>
+                            <constraint firstItem="uko-5L-GEl" firstAttribute="width" secondItem="lk7-4z-UyR" secondAttribute="width" id="KTO-M0-jTe"/>
+                            <constraint firstItem="uko-5L-GEl" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="150" id="TDr-Sd-RsY"/>
+                            <constraint firstItem="uko-5L-GEl" firstAttribute="top" secondItem="0te-pf-oAz" secondAttribute="bottom" constant="51" id="ViH-U9-bEU"/>
+                            <constraint firstAttribute="centerX" secondItem="uko-5L-GEl" secondAttribute="centerX" id="WPX-Cp-0bw"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lk7-4z-UyR" secondAttribute="bottom" constant="150" id="YTG-GF-q2L"/>
+                            <constraint firstItem="uko-5L-GEl" firstAttribute="height" secondItem="lk7-4z-UyR" secondAttribute="height" id="he0-nl-SVr"/>
+                            <constraint firstItem="uko-5L-GEl" firstAttribute="centerX" secondItem="lk7-4z-UyR" secondAttribute="centerX" id="iHf-7U-MXX"/>
+                            <constraint firstAttribute="centerX" secondItem="vtA-Mw-nOA" secondAttribute="centerX" id="mFH-ei-0Ub"/>
+                            <constraint firstItem="0te-pf-oAz" firstAttribute="centerX" secondItem="uko-5L-GEl" secondAttribute="centerX" constant="-2" id="tPK-R6-16O"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="facebookBugSwitch" destination="0te-pf-oAz" id="LkJ-F1-bSh"/>
+                        <outlet property="facebookButton" destination="uko-5L-GEl" id="sAd-gK-D0k"/>
+                        <outlet property="twitterButton" destination="lk7-4z-UyR" id="kcF-Q4-2a5"/>
+                        <segue destination="mgF-gG-uVa" kind="show" identifier="LoggedIn" id="c4k-K5-sAm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="153" y="129"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="GM8-cl-dNJ">
+            <objects>
+                <viewController id="mgF-gG-uVa" customClass="PostViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZzJ-zS-s3P"/>
+                        <viewControllerLayoutGuide type="bottom" id="rf0-Wy-WmJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vXr-1f-BYE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Th7-jP-seC">
+                                <rect key="frame" x="265" y="265" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ZZb-E9-0YQ"/>
+                                    <constraint firstAttribute="width" constant="70" id="kd0-FM-n3w"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adD-XS-4fx">
+                                <rect key="frame" x="237" y="151" width="128" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MLB-So-iuO"/>
+                                    <constraint firstAttribute="width" constant="128" id="qRp-gc-Evr"/>
+                                </constraints>
+                                <state key="normal" title="POST" backgroundImage="button-bkg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="post:" destination="mgF-gG-uVa" eventType="touchUpInside" id="GBo-rb-EOF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-wX-Tax">
+                                <rect key="frame" x="279" y="343" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPT-ix-Ouq">
+                                <rect key="frame" x="236" y="443" width="128" height="30"/>
+                                <state key="normal" title="LOGOUT" backgroundImage="button-bkg">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="mgF-gG-uVa" eventType="touchUpInside" id="pxE-JH-YYv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Th7-jP-seC" secondAttribute="centerY" id="1di-aX-SQz"/>
+                            <constraint firstItem="adD-XS-4fx" firstAttribute="width" secondItem="SPT-ix-Ouq" secondAttribute="width" id="4VW-hK-4pS"/>
+                            <constraint firstAttribute="centerX" secondItem="Th7-jP-seC" secondAttribute="centerX" id="4gP-ce-EuI"/>
+                            <constraint firstItem="Th7-jP-seC" firstAttribute="centerX" secondItem="dOY-wX-Tax" secondAttribute="centerX" id="7an-aV-8DW"/>
+                            <constraint firstItem="Th7-jP-seC" firstAttribute="top" secondItem="adD-XS-4fx" secondAttribute="bottom" constant="84" id="BK3-I9-ue7"/>
+                            <constraint firstItem="adD-XS-4fx" firstAttribute="height" secondItem="SPT-ix-Ouq" secondAttribute="height" id="cxP-xb-bVt"/>
+                            <constraint firstItem="dOY-wX-Tax" firstAttribute="top" secondItem="Th7-jP-seC" secondAttribute="bottom" constant="8" id="h4i-5d-qfa"/>
+                            <constraint firstItem="SPT-ix-Ouq" firstAttribute="centerX" secondItem="Th7-jP-seC" secondAttribute="centerX" id="iR1-cs-mIs"/>
+                            <constraint firstItem="Th7-jP-seC" firstAttribute="centerX" secondItem="adD-XS-4fx" secondAttribute="centerX" id="tee-99-O5s"/>
+                            <constraint firstItem="SPT-ix-Ouq" firstAttribute="top" secondItem="Th7-jP-seC" secondAttribute="bottom" constant="108" id="wt1-fH-ulq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userImage" destination="Th7-jP-seC" id="IJy-s2-49R"/>
+                        <outlet property="userName" destination="dOY-wX-Tax" id="xul-Uw-MW5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sm0-UI-zK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="136"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button-bkg" width="80" height="30"/>
+        <image name="login-facebook" width="65" height="65"/>
+        <image name="login-twitter" width="65" height="65"/>
+    </resources>
 </document>
